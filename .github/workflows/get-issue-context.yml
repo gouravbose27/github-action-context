@@ -1,0 +1,11 @@
+name: Get Issue Details
+on: 
+ issues:
+  types: [opened,edited,closed]
+jobs:
+ info:
+  runs-on: ubuntu-slim
+  steps:
+   - name: Get event details
+     run: echo "${{toJson(github.event)}}"
+  
